@@ -14,7 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginResourceImpl implements LoginResource {
 
     @Override
-    public ModelAndView handleLogin(LoginDto dto) {
-        return new ModelAndView("login");
+    public ModelAndView handleLogin() {
+        return new ModelAndView("auth/login");
+    }
+
+    @Override
+    public ModelAndView getRegistrationPage() {
+        return new ModelAndView("auth/registration");
     }
 }

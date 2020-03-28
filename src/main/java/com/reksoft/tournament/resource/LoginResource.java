@@ -1,6 +1,7 @@
 package com.reksoft.tournament.resource;
 
 import com.reksoft.tournament.dto.LoginDto;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public interface LoginResource {
 
-    @PostMapping("/login")
-    ModelAndView handleLogin(@RequestBody LoginDto dto);
+    @GetMapping("/")
+    ModelAndView handleLogin();
+
+    @GetMapping("/registration")
+    ModelAndView getRegistrationPage();
 }
