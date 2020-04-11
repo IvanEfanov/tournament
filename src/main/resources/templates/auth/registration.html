@@ -3,6 +3,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/registration.js}"></script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,16 +21,16 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="container">
-                <form>
+                <form action="#" th:action="@{/registration}" method="post">
                     <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.registration}">
                         Registration</h1>
-                    <input type="text" class="form-control login-input center-block"
+                    <input type="text" class="form-control login-input center-block js-login"
                            th:placeholder="#{ru.page.default.placeholder.login}" required autofocus>
-                    <input type="text" class="form-control password-input center-block"
+                    <input type="text" class="form-control password-input center-block js-password"
                            th:placeholder="#{ru.page.default.placeholder.password}">
-                    <input type="text" class="form-control full-name-input center-block"
+                    <input type="text" class="form-control full-name-input center-block js-full-name"
                            th:placeholder="#{ru.page.default.placeholder.full.name}">
-                    <button class="btn btn-lg btn-success registration-button center-block" type="submit"
+                    <button class="btn btn-lg btn-success registration-button center-block js-registration" type="submit"
                             th:text="#{ru.button.default.text.create.user}">Create user
                     </button>
                     <a th:href="@{/}" class="btn btn-lg btn-danger center-block registration-button"

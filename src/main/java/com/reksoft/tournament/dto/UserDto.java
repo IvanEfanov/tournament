@@ -3,7 +3,7 @@ package com.reksoft.tournament.dto;
 import lombok.*;
 
 /**
- * LoginDto
+ * UserDto
  *
  * @author Ivan Efanov
  */
@@ -13,16 +13,13 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginDto {
+public class UserDto {
 
-    /*
-     Login field.
-    */
+    private Long id;
+
     private String login;
 
-    /*
-     Password field.
-    */
     private String password;
 
+    private String fullName;
 }
