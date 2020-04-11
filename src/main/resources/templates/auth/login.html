@@ -3,36 +3,38 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!doctype html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
-    <title>Signin Template for Bootstrap</title>
+    <link rel="stylesheet" th:href="@{/css/auth/login.css}"/>
 
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="signin.css" rel="stylesheet">
+    <title>Login</title>
 </head>
 
-<body class="text-center">
-<form class="form-signin">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
+<body style="background-color: whitesmoke">
+<div class="main-row">
+    <div class="row space-row-25"></div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="container">
+                <form >
+                    <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.auth}">Please sign in</h1>
+                    <input type="text" class="form-control login-input center-block" placeholder="Login" required autofocus>
+                    <input type="password" class="form-control center-block password-input" placeholder="Password" required>
+                    <button class="btn btn-lg btn-success login-button center-block" type="submit" th:text="#{ru.button.default.text.sign.in}">Sign in</button>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <a th:href="@{/registration}" class="btn btn-lg btn-primary center-block password-button"
+                       type="button" th:text="#{ru.button.default.text.registration}">Registration</a>
+                </form>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <a th:href="@{/registration}" class="btn btn-lg btn-primary btn-block" type="button">Registration</a>
-</form>
+</div>
+
+
 </body>
 </html>
