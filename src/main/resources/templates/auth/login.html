@@ -9,25 +9,30 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" th:href="@{/css/auth/login.css}"/>
+    <link rel="stylesheet" th:href="@{/css/default.css}"/>
 
-    <title>Login</title>
+    <title th:text="#{ru.page.default.title.auth}">Auth</title>
 </head>
 
-<body style="background-color: whitesmoke">
+<body>
 <div class="main-row">
     <div class="row space-row-25"></div>
-
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="container">
-                <form >
-                    <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.auth}">Please sign in</h1>
-                    <input type="text" class="form-control login-input center-block" placeholder="Login" required autofocus>
-                    <input type="password" class="form-control center-block password-input" placeholder="Password" required>
-                    <button class="btn btn-lg btn-success login-button center-block" type="submit" th:text="#{ru.button.default.text.sign.in}">Sign in</button>
+                <form>
+                    <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.auth}">Please sign
+                        in</h1>
+                    <input type="text" class="form-control login-input center-block" th:placeholder="#{ru.page.default.placeholder.login}" required
+                           autofocus>
+                    <input type="password" class="form-control center-block password-input" th:placeholder="#{ru.page.default.placeholder.password}"
+                           required>
+                    <button class="btn btn-lg btn-success login-button center-block" type="submit"
+                            th:text="#{ru.button.default.text.sign.in}">Sign in
+                    </button>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a th:href="@{/registration}" class="btn btn-lg btn-primary center-block password-button"
+                    <a th:href="@{/registration}" class="btn btn-lg btn-primary center-block registration-button"
                        type="button" th:text="#{ru.button.default.text.registration}">Registration</a>
                 </form>
             </div>

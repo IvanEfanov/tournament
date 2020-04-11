@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
-    <meta charset="UTF-8"/>
-    <title th:text="#{ru.page.default.title.registration}">Registration </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" th:href="@{/css/auth/registration.css}"/>
+    <link rel="stylesheet" th:href="@{/css/default.css}"/>
+
+    <title th:text="#{ru.page.default.title.registration}">Registration</title>
 </head>
-<body class="body-background-color">
-
-<div class="container">
-    <div class="row" style="margin-top:20px">
-        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-            <form th:action="@{/j_spring_security_check}" method="post">
-                <fieldset>
-                    <h1>Registration</h1>
-
-                    <div class="form-group">
-                        <input type="text" name="login" id="login" placeholder="Login" class="form-control input-lg"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" id="password" placeholder="Password" class="form-control input-lg"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="username" id="username" placeholder="name" class="form-control input-lg"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="email" id="email" placeholder="Email" class="form-control input-lg"/>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="submit" class="btn btn-success" value="Save"/>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
+<body>
+<div class="main-row">
+    <div class="row space-row-25"></div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="container">
+                <form>
+                    <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.registration}">
+                        Registration</h1>
+                    <input type="text" class="form-control login-input center-block"
+                           th:placeholder="#{ru.page.default.placeholder.login}" required autofocus>
+                    <input type="text" class="form-control password-input center-block"
+                           th:placeholder="#{ru.page.default.placeholder.password}">
+                    <input type="text" class="form-control full-name-input center-block"
+                           th:placeholder="#{ru.page.default.placeholder.full.name}">
+                    <button class="btn btn-lg btn-success registration-button center-block" type="submit"
+                            th:text="#{ru.button.default.text.create.user}">Create user
+                    </button>
+                    <a th:href="@{/}" class="btn btn-lg btn-danger center-block registration-button"
+                       type="button" th:text="#{ru.button.default.text.cancel}">Registration</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
