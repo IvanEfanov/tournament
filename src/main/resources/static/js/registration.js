@@ -12,7 +12,7 @@ function registration(login, password, fullName) {
             console.log(res);
         },
         success: function () {
-            window.location.replace("/login");
+            window.location.replace("/");
         }
     });
 }

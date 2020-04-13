@@ -1,8 +1,13 @@
 package com.reksoft.tournament.entity;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * User
@@ -15,9 +20,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 @Table(name = "rt_user")
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,4 +36,38 @@ public class User {
 
     @Column(name = "full_name")
     private String fullName;
+
+    @Transient
+    List<GrantedAuthority> authorities;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_TO_ROLE", joinColumns = {@JoinColumn(name = "USER_ID")}, inverseJoinColumns = {
+            @JoinColumn(name = "USER_ROLE_ID")
+    })
+    private Set<Role> roles = new HashSet<>();
+
+    @Override
+    public String getUsername() {
+        return login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

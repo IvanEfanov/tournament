@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,12 +21,12 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="container">
-                <form>
+                <form action="#" th:action="@{/login}" method="post">
                     <h1 class="h3 mb-3 font-weight-normal main-title" th:text="#{ru.page.default.text.auth}">Please sign
                         in</h1>
-                    <input type="text" class="form-control login-input center-block" th:placeholder="#{ru.page.default.placeholder.login}" required
+                    <input type="text" class="form-control login-input center-block" name="login" th:placeholder="#{ru.page.default.placeholder.login}" required
                            autofocus>
-                    <input type="password" class="form-control center-block password-input" th:placeholder="#{ru.page.default.placeholder.password}"
+                    <input type="password" class="form-control center-block password-input" name="password" th:placeholder="#{ru.page.default.placeholder.password}"
                            required>
                     <button class="btn btn-lg btn-success login-button center-block" type="submit"
                             th:text="#{ru.button.default.text.sign.in}">Sign in

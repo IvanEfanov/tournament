@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" th:href="@{/css/default.css}"/>
+
+    <title th:text="#{ru.page.default.title.error}">Balance page</title>
+
+</head>
+<body>
+<div>
+    <h1>MAIN PAGE</h1>
+    <h2 th:text="'Hello! you have been auth by : ' + ${login}"></h2>
+
+    <input type="button" class="btn-danger" th:action="@{/logout}" th:text="#{ru.button.default.text.exit}"/>
+</div>
+</body>
+</html>
