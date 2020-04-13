@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public interface LoginResource {
 
-    @GetMapping("/")
+    @GetMapping({"/", "/login"})
     ModelAndView handleLogin();
 
     @GetMapping("/registration")
