@@ -4,6 +4,7 @@ import com.reksoft.tournament.dto.UserDto;
 import com.reksoft.tournament.entity.User;
 import com.reksoft.tournament.exception.UserLoginAlreadyUsedException;
 import com.reksoft.tournament.resource.SecurityResource;
+import com.reksoft.tournament.service.MailService;
 import com.reksoft.tournament.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -21,6 +22,8 @@ public class SecurityResourceImpl implements SecurityResource {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private MailService mailService;
 
     @Override
     public ModelAndView handleLogin() {
@@ -36,6 +39,7 @@ public class SecurityResourceImpl implements SecurityResource {
     public void createUser(UserDto dto) {
         try {
             userService.saveUser(dto);
+            mailService.sendEmailSuccessUserRegistration(dto);
         } catch (UserLoginAlreadyUsedException e) {
             e.printStackTrace();
         }

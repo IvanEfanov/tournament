@@ -37,6 +37,9 @@ public class User implements UserDetails {
     @Column(name = "full_name")
     private String fullName;
 
+    @Column(name = "email")
+    private String email;
+
     @Transient
     List<GrantedAuthority> authorities;
 
