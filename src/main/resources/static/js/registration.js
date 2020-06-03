@@ -9,11 +9,11 @@ function registration(login, password, fullName, email) {
             email: email
         }),
         contentType: 'application/json',
-        error: function (res) {
-            console.log(res);
+        error: function () {
+            window.location.replace("/smth-wrong");
         },
         success: function () {
-            window.location.replace("/");
+            window.location.replace("/success-reg");
         }
     });
 }

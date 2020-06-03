@@ -27,4 +27,14 @@ public interface SecurityResource {
 
     @GetMapping(value = "/login")
     ModelAndView getAuth();
+
+    @GetMapping(value = "/logout")
+    ModelAndView logout();
+
+    @GetMapping(value = "/success-reg")
+    ModelAndView getSuccessRegistration();
+
+    @GetMapping(value = "/smth-wrong")
+    ModelAndView getSomethingWrong();
+
 }

@@ -9,18 +9,17 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" th:href="@{/css/default.css}"/>
-    <link rel="stylesheet" th:href="@{/css/main/main.css}"/>
 
-
-    <title th:text="#{ru.page.default.title.main}">Main</title>
+    <title th:text="#{ru.page.default.title.success.registration}">Main</title>
 
 </head>
 <body>
 <div>
-    <h1>MAIN PAGE</h1>
-    <h2 th:text="#{ru.page.default.text.main} + ${login}"></h2>
+    <h1>SUCCESS REGISTRATION PAGE</h1>
+    <h2 th:text="#{ru.page.default.text.success.registration}"></h2>
+    <h2 th:text="#{ru.page.default.text.success.registration.email}"></h2>
 
-    <a type="button" class="btn btn-lg btn-danger center-block logout-button" th:href="@{/logout}" th:text="#{ru.button.default.text.exit}">Logout</a>
+    <a type="button" class="btn-danger" th:href="@{/}" th:text="#{ru.button.default.text.auth}">Authing</a>
 </div>
 </body>
 </html>
